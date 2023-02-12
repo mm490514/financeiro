@@ -135,6 +135,27 @@ require_once($pagina."/campos.php");
 									</div>
 								</div>
 
+								<div class="col-md-4 col-sm-12">
+									<div class="mb-3">
+										<label for="exampleFormControlInput1" class="form-label"><?php echo $campo7 ?></label>
+										<select class="form-select sel2" aria-label="Default select example" name="<?php echo $campo7 ?>" id="<?php echo $campo7 ?>" style="width:100%">
+											<?php 
+											$query = $pdo->query("SELECT * FROM fornecedores order by nome asc");
+											$res = $query->fetchAll(PDO::FETCH_ASSOC);
+											for($i=0; $i < @count($res); $i++){
+												foreach ($res[$i] as $key => $value){	}
+													$id_item = $res[$i]['id'];
+												$nome_item = $res[$i]['nome'];
+												?>
+												<option value="<?php echo $id_item ?>"><?php echo $nome_item ?></option>
+
+											<?php } ?>
+
+
+										</select>
+									</div>
+								</div>
+
 
 							</div>
 

@@ -34,7 +34,7 @@ $impressao_automatica = 'Sim';
 $query = $pdo->query("SELECT * FROM config");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 if(@count($res) == 0){
-	$pdo->query("INSERT INTO config SET nome_sistema = '$nome_sistema', email_adm = '$email_adm', endereco_site = '$endereco_site', telefone_fixo = '$telefone_fixo', telefone_whatsapp = '$telefone_whatsapp', cnpj_site = '$cnpj_site', rodape_relatorios = '$rodape_relatorios', valor_multa = '$valor_multa', valor_juros_dia = '$valor_juros_dia', frequencia_automatica = '$frequencia_automatica', relatorio_pdf = '$relatorio_pdf', fonte_comprovante = '$fonte_comprovante', logo = 'logo.png', icone = 'icone.png', dias_carencia = '$dias_carencia', alerta = curDate(), impressao_automatica = '$impressao_automatica'");
+	$pdo->query("INSERT INTO config SET nome_sistema = '$nome_sistema', email_adm = '$email_adm', endereco_site = '$endereco_site', telefone_fixo = '$telefone_fixo', telefone_whatsapp = '$telefone_whatsapp', cnpj_site = '$cnpj_site', rodape_relatorios = '$rodape_relatorios', valor_multa = '$valor_multa', valor_juros_dia = '$valor_juros_dia', frequencia_automatica = '$frequencia_automatica', relatorio_pdf = '$relatorio_pdf', fonte_comprovante = '$fonte_comprovante', logo = 'logoqbonita', icone = 'icone.png', dias_carencia = '$dias_carencia', alerta = curDate(), impressao_automatica = '$impressao_automatica'");
 }else{
 	$nome_sistema = $res[0]['nome_sistema'];
 	$email_adm = $res[0]['email_adm'];

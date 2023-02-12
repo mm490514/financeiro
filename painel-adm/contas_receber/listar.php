@@ -224,7 +224,7 @@ echo <<<HTML
 
 
 	<a class="{$classe_whats}" target="_blank" href="http://api.whatsapp.com/send?1=pt_BR&phone=55$telefone_cliente&text=Ola, $nome_cliente Lembrete de vencimento no dia: $data_venc no valor de: R$ $valor." title="Cobrar pelo WhatsApp: $telefone_cliente">
-	<i class="bi bi-whatsapp text-success"></i></a>
+	
 	
 	</td>
 	</tr>

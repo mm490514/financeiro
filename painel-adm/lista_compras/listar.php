@@ -9,7 +9,7 @@ echo <<<HTML
 <th>Status</th>
 <th>Valor</th>
 <th>Pagamento</th>	
-<th>Lançamento</th>	
+<th>Fornecedor</th>	
 <th>Vencimento</th>	
 <th>Parcelas</th>
 <th>Cliente</th>								

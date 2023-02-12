@@ -19,7 +19,7 @@ $impressao_automatica = $_POST['impressao_automatica'];
 $valor_juros_dia = str_replace(',', '.', $valor_juros_dia);
 
 //SCRIPT PARA SUBIR FOTO NO SERVIDOR
-$nome_img = 'logo.png';
+$nome_img = 'logoqbonita';
 $caminho = '../img/' .$nome_img;
 
 $imagem_temp = @$_FILES['logo']['tmp_name']; 
@@ -58,7 +58,7 @@ if(@$_FILES['icone']['name'] != ""){
 }
 
 
-$query = $pdo->prepare("UPDATE config SET nome_sistema = :nome_sistema, email_adm = :email_adm, endereco_site = :endereco_site, telefone_fixo = :telefone_fixo, telefone_whatsapp = :telefone_whatsapp, cnpj_site = :cnpj_site, rodape_relatorios = '$rodape_relatorios', valor_multa = '$valor_multa', valor_juros_dia = '$valor_juros_dia', frequencia_automatica = '$frequencia_automatica', relatorio_pdf = '$relatorio_pdf', fonte_comprovante = '$fonte_comprovante', logo = 'logo.png', icone = 'icone.png', dias_carencia = '$dias_carencia', impressao_automatica = '$impressao_automatica' WHERE id = '1'");
+$query = $pdo->prepare("UPDATE config SET nome_sistema = :nome_sistema, email_adm = :email_adm, endereco_site = :endereco_site, telefone_fixo = :telefone_fixo, telefone_whatsapp = :telefone_whatsapp, cnpj_site = :cnpj_site, rodape_relatorios = '$rodape_relatorios', valor_multa = '$valor_multa', valor_juros_dia = '$valor_juros_dia', frequencia_automatica = '$frequencia_automatica', relatorio_pdf = '$relatorio_pdf', fonte_comprovante = '$fonte_comprovante', logo = 'logoqbonita', icone = 'icone.png', dias_carencia = '$dias_carencia', impressao_automatica = '$impressao_automatica' WHERE id = '1'");
 
 $query->bindValue(":nome_sistema", "$nome_sistema");
 $query->bindValue(":email_adm", "$email_adm");

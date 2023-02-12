@@ -15,11 +15,13 @@ $subtotal = str_replace(',', '.', $subtotal);
 if($data == date('Y-m-d') and $parcelas == '1'){
 	$status = 'Concluída';
 }else{
-	$status = 'Pendente';
-	if($cliente == ''){
-	echo 'Você precisa Selecionar um Fornecedor';
-	exit();
-	}	
+	// $status = 'Pendente';
+	// if($cliente == ''){
+	// echo 'Você precisa Selecionar um Fornecedor';
+	// exit();
+	// }	
+
+	$status = 'Concluída';
 }
 
 if($parcelas < 1){

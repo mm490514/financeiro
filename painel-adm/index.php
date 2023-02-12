@@ -103,7 +103,7 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #b46b6c;">
 		<div class="container-fluid">
 			<div class="d-flex mr-4">
 				<img class="img-profile rounded-circle" src="../img/user.jpg" width="40px" height="40px">
@@ -222,7 +222,7 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 
 
 				</ul>
-				<a class="navbar-brand" href="#"><img src="../img/logo.png" width="30px"></a>
+				<a class="navbar-brand" href="#"><img src="../img/logoqbonita2.png" width="30px"></a>
 
 			</div>
 		</div>
@@ -458,7 +458,7 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 							</div>
 
 							<div id="divImgLogo" class="mt-4">
-								<img src="../img/logo.png" width="100px" id="targetLogo">
+								<img src="../img/logoqbonita2.png" width="100px" id="targetLogo">
 							</div>
 						</div>
 
@@ -469,7 +469,7 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 							</div>
 
 							<div id="divImgIcone" class="mt-4">
-								<img src="../img/icone.png" width="25px" id="targetIcone">
+								<img src="../img/logoqbonita2.png" width="25px" id="targetIcone">
 							</div>
 						</div>
 

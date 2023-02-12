@@ -17,7 +17,6 @@ echo <<<HTML
 <th>Descrição</th>
 <th>{$campo4}</th>	
 <th>{$campo6}</th>
-<th>{$campo7}</th>	
 <th>{$campo8}</th>	
 <th>{$campo9}</th>									
 <th>Ações</th>
@@ -39,7 +38,7 @@ for($i=0; $i < @count($res); $i++){
 		$cp4 = $res[$i]['estoque'];
 		$cp5 = $res[$i]['valor_compra'];
 		$cp6 = $res[$i]['valor_venda'];
-		$cp7 = $res[$i]['fornecedor'];
+		
 		$cp8 = $res[$i]['categoria'];
 		$cp9 = $res[$i]['foto'];
 		$cp10 = $res[$i]['ativo'];
@@ -49,13 +48,7 @@ for($i=0; $i < @count($res); $i++){
 		$cp5 = number_format($cp5, 2, ',', '.');
 		$cp6 = number_format($cp6, 2, ',', '.');
 
-		$query1 = $pdo->query("SELECT * from fornecedores where id = '$cp7' ");
-		$res1 = $query1->fetchAll(PDO::FETCH_ASSOC);
-		if(@count($res1) > 0){
-			$nome_forn = $res1[0]['nome'];
-		}else{
-			$nome_forn = 'Sem Fornecedor';
-		}
+		
 
 		$query1 = $pdo->query("SELECT * from cat_produtos where id = '$cp8' ");
 		$res1 = $query1->fetchAll(PDO::FETCH_ASSOC);
@@ -96,17 +89,17 @@ echo <<<HTML
 	<td>{$cp3}</td>	
 	<td>{$cp4}</td>	
 	<td>R$ {$cp6}</td>	
-	<td>{$nome_forn}</td>	
+	
 	<td>{$nome_cat}</td>	
 	<td><img src="../img/{$pagina}/{$cp9}" width="40px"></td>									
 	<td>
-	<a href="#" onclick="editar('{$id}', '{$cp1}', '{$cp2}', '{$cp3}', '{$cp4}', '{$cp5}', '{$cp6}', '{$cp7}', '{$cp8}', '{$cp9}', '{$cp10}', '{$nivel_estoque}')" title="Editar Registro">	<i class="bi bi-pencil-square text-primary"></i> </a>
+	<a href="#" onclick="editar('{$id}', '{$cp1}', '{$cp2}', '{$cp3}', '{$cp4}', '{$cp5}', '{$cp6}', '{$cp8}', '{$cp9}', '{$cp10}', '{$nivel_estoque}')" title="Editar Registro">	<i class="bi bi-pencil-square text-primary"></i> </a>
 	<a href="#" onclick="excluir('{$id}' , '{$cp2}')" title="Excluir Registro">	<i class="bi bi-trash text-danger"></i> </a>
 
 	<a href="#" onclick="mudarStatus('{$id}', '{$ativar}')" title="{$ativo}">
 	<i class="bi {$icone} text-secondary"></i></a>
 
-	<a class="mx-1" href="#" onclick="mostrarDados('{$id}', '{$cp1}', '{$cp2}', '{$cp3}', '{$cp4}', '{$cp5}', '{$cp6}', '{$nome_forn}', '{$nome_cat}', '{$cp9}', '{$cp10}', '{$nivel_estoque}')" title="Ver Dados do Cliente">
+	<a class="mx-1" href="#" onclick="mostrarDados('{$id}', '{$cp1}', '{$cp2}', '{$cp3}', '{$cp4}', '{$cp5}', '{$cp6}', '{$nome_cat}', '{$cp9}', '{$cp10}', '{$nivel_estoque}')" title="Ver Dados do Cliente">
 	<i class="bi bi-exclamation-square"></i></a>
 
 	<a href="#" onclick="comprarProduto('{$id}' , '{$cp2}', '{$cp11}')" title="Comprar Produto">	<i class="bi bi-cash text-success"></i> </a>
@@ -131,7 +124,7 @@ $(document).ready(function() {
 } );
 
 
-function editar(id, cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, nivel){
+function editar(id, cp1, cp2, cp3, cp4, cp5, cp6, cp8, cp9, cp10, nivel){
 	$('#id').val(id);
 	$('#<?=$campo1?>').val(cp1);
 	$('#<?=$campo2?>').val(cp2);
@@ -172,15 +165,14 @@ function limparCampos(){
 
 
 
-function mostrarDados(id, cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, nivel){
+function mostrarDados(id, cp1, cp2, cp3, cp4, cp5, cp6, cp8, cp9, cp10, nivel){
 	
 	$('#campo1').text(cp1);
 	$('#campo2').text(cp2);
 	$('#campo3').text(cp3);
 	$('#campo4').text(cp4);
 	$('#campo5').text(cp5);
-	$('#campo6').text(cp6);
-	$('#campo7').text(cp7);
+	$('#campo6').text(cp6);	
 	$('#campo8').text(cp8);
 	$('#imagem_dados').attr('src','../img/'+pag+'/'+cp9);
 	$('#campo10').text(cp10);

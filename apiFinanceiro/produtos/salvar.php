@@ -54,11 +54,11 @@ if($id == "" || $id == "0"){
 		$foto = 'sem-foto.jpg';
 	}
 
-	$res = $pdo->prepare("INSERT INTO $pagina SET nome = :nome, codigo = :codigo, descricao = :descricao, valor_venda = :valor_venda, valor_compra = :valor_compra, categoria = :categoria, ativo = :ativo, foto = '$foto'");
+	$res = $pdo->prepare("INSERT INTO $pagina SET nome = :nome, codigo = :codigo, descricao = :descricao, valor_venda = :valor_venda, valor_compra = :valor_compra, categoria = :categoria, fornecedor = :fornecedor, ativo = :ativo, foto = '$foto'");
 }else{
 
 	if($foto == ""){
-		$res = $pdo->prepare("UPDATE $pagina SET nome = :nome, codigo = :codigo, descricao = :descricao, valor_venda = :valor_venda, valor_compra = :valor_compra, categoria = :categoria, ativo = :ativo WHERE id = '$id'");
+		$res = $pdo->prepare("UPDATE $pagina SET nome = :nome, codigo = :codigo, descricao = :descricao, valor_venda = :valor_venda, valor_compra = :valor_compra, categoria = :categoria, fornecedor = :fornecedor, ativo = :ativo WHERE id = '$id'");
 	}else{
 
 		//BUSCAR A IMAGEM PARA EXCLUIR DA PASTA
