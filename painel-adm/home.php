@@ -410,7 +410,7 @@ $totalPagarM = 0;
 		<section id="stats-subtitle">
 			<div class="row mb-2">
 				<div class="col-12 mt-3 mb-1">
-					<h4 class="text-uppercase">Modelo de Gráficos</h4>
+					<h4 class="text-uppercase">Gráficos</h4>
 
 				</div>
 			</div>
