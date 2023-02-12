@@ -145,11 +145,11 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 							<li><a class="dropdown-item" href="index.php?pag=<?php echo $menu2 ?>">Clientes</a></li>
 							<li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu4 ?>">Usuários</a></li>
 							<li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu5 ?>">Bancos</a></li>
-							<li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu3 ?>">Níveis de Usuários</a></li>
+							<!-- <li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu3 ?>">Níveis de Usuários</a></li> -->
 							<li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu6 ?>">Contas Bancárias</a></li>
 							<li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu7 ?>">Categoria Despesas</a></li>
 							<li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu8 ?>">Despesas</a></li>
-							<li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu9 ?>">Frequências</a></li>
+							<!-- <li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu9 ?>">Frequências</a></li> -->
 							<li><a class="dropdown-item <?php echo $ocultar_menu ?>" href="index.php?pag=<?php echo $menu10 ?>">Formas PGTO</a></li>
 						</ul>
 					</li>
@@ -241,15 +241,7 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 		?>
 	</div>
 
-	<div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-		<!-- Copyright -->
-		<div class="text-white mb-3 mb-md-0">
-			Copyright © 2023. Todos os direitos reservados.
-		</div>
-		<!-- Copyright -->
-
-
-	</div>
+	
 
 
 
@@ -279,8 +271,8 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 					</div>
 
 					<div class="mb-3">
-						<label for="exampleFormControlInput1" class="form-label">Email</label>
-						<input type="email" class="form-control" name="email-usuario" placeholder="Email" value="<?php echo $email_usuario ?>">
+						<label for="exampleFormControlInput1"  class="form-label">Email</label>
+						<input type="email" class="form-control" disabled name="email-usuario" placeholder="Email" value="<?php echo $email_usuario ?>">
 					</div>
 
 					<div class="mb-3">

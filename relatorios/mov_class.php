@@ -19,6 +19,8 @@ $local_mov = str_replace(' ', '-', $local_mov);
 //ALIMENTAR OS DADOS NO RELATÓRIO
 $html = file_get_contents($url_sistema."relatorios/mov.php?tipo=$tipo&data_inicial=$data_inicial&data_final=$data_final&plano_conta=$plano_conta&sub_plano_conta=$sub_plano_conta&forma_pgto=$forma_pgto&tipo_mov=$tipo_mov&local_mov=$local_mov");
 
+$relatorio_pdf = 'Sim';
+
 if($relatorio_pdf != 'Sim'){
 	echo $html;
 	exit();

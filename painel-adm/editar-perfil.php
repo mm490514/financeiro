@@ -16,11 +16,15 @@ if($total_reg > 0 and $id_usu != $id){
 	exit();
 }
 
+var_dump($id);exit;
+
 $query = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, senha = :senha WHERE id = '$id'");
 $query->bindValue(":email", "$email");
 $query->bindValue(":senha", "$senha");
 $query->bindValue(":nome", "$nome");
 $query->execute();
+
+
 
 echo 'Salvo com Sucesso';
 

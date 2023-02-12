@@ -7,6 +7,8 @@ $id = $_GET['id'];
 //ALIMENTAR OS DADOS NO RELATÓRIO
 $html = file_get_contents($url_sistema."relatorios/compras.php?id=".$id);
 
+$relatorio_pdf = 'S';
+
 if($relatorio_pdf != 'Sim'){
 	echo $html;
 	exit();

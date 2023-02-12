@@ -8,6 +8,8 @@ $data_final = @$_POST['data-final-rel-lucro'];
 //ALIMENTAR OS DADOS NO RELATÓRIO
 $html = file_get_contents($url_sistema."relatorios/lucroPagas.php?data_inicial=$data_inicial&data_final=$data_final");
 
+$relatorio_pdf = 'Sim';
+
 if($relatorio_pdf != 'Sim'){
 	echo $html;
 	exit();

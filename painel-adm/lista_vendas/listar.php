@@ -20,7 +20,7 @@ echo <<<HTML
 HTML;
 
 
-$query = $pdo->query("SELECT * from vendas order by id desc ");
+$query = $pdo->query("SELECT * from vendas order by id desc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 for($i=0; $i < @count($res); $i++){
 	foreach ($res[$i] as $key => $value){} 

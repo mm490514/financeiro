@@ -6,6 +6,8 @@ require_once('../config.php');
 //ALIMENTAR OS DADOS NO RELATÓRIO
 $html = file_get_contents($url_sistema."relatorios/produtos.php");
 
+$relatorio_pdf = 'Sim';
+
 if($relatorio_pdf != 'Sim'){
 	echo $html;
 	exit();

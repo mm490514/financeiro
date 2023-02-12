@@ -37,10 +37,10 @@ $data90 = date('Y-m-d', strtotime("+3 month",strtotime($data_atual)));
 						<div class="col-md-5 col-sm-12">
 							<div class="mb-3">
 								<label for="exampleFormControlInput1" class="form-label">Fornecedor</label>
-								<select class="form-select sel2" aria-label="Default select example" name="id-cliente" id="id-cliente" style="width:100%;" onchange="selecionarCliente()">
+								<select class="form-select sel2" aria-label="Default select example" name="id-cliente" id="id-cliente" style="width:100%;" onchange="selecionarClient()">
 									<option value="">Diversos</option>
 									<?php 
-									$query = $pdo->query("SELECT * FROM clientes order by nome asc");
+									$query = $pdo->query("SELECT * FROM fornecedores  order by nome asc");
 									$res = $query->fetchAll(PDO::FETCH_ASSOC);
 									for($i=0; $i < @count($res); $i++){
 										foreach ($res[$i] as $key => $value){	}

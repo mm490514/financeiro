@@ -22,7 +22,7 @@ $query = $pdo->query("SELECT * from produtos where ativo = 'Sim'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $produtosCadastrados = @count($res);
 
-$query = $pdo->query("SELECT * from produtos where ativo = 'Sim' and estoque <= nivel");
+$query = $pdo->query("SELECT * from produtos where ativo = 'Sim' and estoque < nivel");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $estoqueBaixo = @count($res);
 
