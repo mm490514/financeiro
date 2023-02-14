@@ -2,11 +2,11 @@
 @session_start();
 require_once("conexao.php");
 
-$email = $_POST['email'];
+$login = $_POST['login'];
 $senha = $_POST['senha'];
 
-$query = $pdo->prepare("SELECT * from usuarios where email = :email and senha = :senha ");
-$query->bindValue(":email", "$email");
+$query = $pdo->prepare("SELECT * from usuarios where login = :login and senha = :senha ");
+$query->bindValue(":login", "$login");
 $query->bindValue(":senha", "$senha");
 $query->execute();
 $res = $query->fetchAll(PDO::FETCH_ASSOC);

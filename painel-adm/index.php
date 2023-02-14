@@ -14,7 +14,7 @@ if ($niv_usuario != 'Administrador') {
 $query = $pdo->query("SELECT * from usuarios where id = '$id_usuario' ");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $nome_usuario = $res[0]['nome'];
-$email_usuario = $res[0]['email'];
+$email_usuario = $res[0]['login'];
 $senha_usuario = $res[0]['senha'];
 $nivel_usuario = $res[0]['nivel'];
 
@@ -83,7 +83,7 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 	<meta name="author" content="Hugo Vasconcelos">
 	<title><?php echo $nome_sistema ?></title>
 
-	<link href="../img/icone.png" rel="shortcut icon" type="image/x-icon">
+	<link href="../img/logoqbonita2.png" rel="shortcut icon" type="image/x-icon">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
 

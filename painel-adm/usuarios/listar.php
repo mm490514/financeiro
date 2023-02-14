@@ -24,7 +24,7 @@ for($i=0; $i < @count($res); $i++){
 
 		$id = $res[$i]['id'];
 		$cp1 = $res[$i]['nome'];
-		$cp2 = $res[$i]['email'];
+		$cp2 = $res[$i]['login'];
 		$cp3 = $res[$i]['senha'];
 		$cp4 = $res[$i]['nivel'];
 

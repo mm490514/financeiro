@@ -13,7 +13,7 @@ $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
 $total_reg2 = @count($res2);
 
 if ($total_reg == 0) {
-    $pdo->query("INSERT INTO usuarios SET nome = '$nome_admin', email = '$email_adm', senha = '123', nivel = 'Administrador' ");
+    $pdo->query("INSERT INTO usuarios SET nome = '$nome_admin', login = '$email_adm', senha = '123', nivel = 'Administrador' ");
 }
 
 if ($total_reg2 == 0) {
@@ -87,7 +87,7 @@ if (@count($res_cob) == 0) {
     <meta name="description" content="">
     <meta name="author" content="Hugo Vasconcelos">
 
-    <link href="img/icone.png" rel="shortcut icon" type="image/x-icon">
+    <link href="img/logoqbonita2.png" rel="shortcut icon" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -116,8 +116,8 @@ if (@count($res_cob) == 0) {
                     <form method="post" action="autenticar.php">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" name="email" id="form3Example3" class="form-control form-control-lg" placeholder="Digite seu endereço de email" />
-                            <label class="form-label" for="form3Example3">Endereço de Email</label>
+                            <input type="text" name="login" id="form3Example3" class="form-control form-control-lg" placeholder="Digite seu Login" />
+                            <label class="form-label" for="form3Example3">Login</label>
                         </div>
 
                         <!-- Password input -->

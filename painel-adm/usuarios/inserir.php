@@ -10,7 +10,7 @@ $cp4 = $_POST[$campo4];
 $id = @$_POST['id'];
 
 //VALIDAR CAMPO
-$query = $pdo->query("SELECT * from $pagina where email = '$cp2'");
+$query = $pdo->query("SELECT * from $pagina where login = '$cp2'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 $id_reg = @$res[0]['id'];
@@ -20,9 +20,9 @@ if($total_reg > 0 and $id_reg != $id){
 }
 
 if($id == ""){
-	$query = $pdo->prepare("INSERT INTO $pagina set nome = :campo1, email = :campo2, senha = :campo3, nivel = :campo4");
+	$query = $pdo->prepare("INSERT INTO $pagina set nome = :campo1, login = :campo2, senha = :campo3, nivel = :campo4");
 }else{
-	$query = $pdo->prepare("UPDATE $pagina set nome = :campo1, email = :campo2, senha = :campo3, nivel = :campo4 WHERE id = '$id'");
+	$query = $pdo->prepare("UPDATE $pagina set nome = :campo1, login = :campo2, senha = :campo3, nivel = :campo4 WHERE id = '$id'");
 }
 
 $query->bindValue(":campo1", "$cp1");

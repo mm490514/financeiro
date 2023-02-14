@@ -12,9 +12,9 @@ $url_sistema = "http://localhost:8046/financeiro/";
 
 
 //DADOS PARA O BANCO DADOS LOCAL
-$servidor = 'localhost';
+$servidor = '127.0.0.1';
 $usuario = 'root';
 $senha = '';
-$banco = 'financeiro';
+$banco = 'financeiro2';
 
 ?>

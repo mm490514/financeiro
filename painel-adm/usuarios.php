@@ -37,7 +37,7 @@ require_once($pagina."/campos.php");
 
 					<div class="mb-3">
 						<label for="exampleFormControlInput1" class="form-label"><?php echo $campo2 ?></label>
-						<input type="email" class="form-control" name="<?php echo $campo2 ?>" placeholder="<?php echo $campo2 ?>" id="<?php echo $campo2 ?>" required>
+						<input type="text" class="form-control" name="<?php echo $campo2 ?>" placeholder="<?php echo $campo2 ?>" id="<?php echo $campo2 ?>" required>
 					</div>
 
 					<div class="mb-3">
