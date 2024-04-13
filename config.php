@@ -14,7 +14,7 @@ $url_sistema = "http://localhost:8046/financeiro/";
 //DADOS PARA O BANCO DADOS LOCAL
 $servidor = '127.0.0.1';
 $usuario = 'root';
-$senha = '';
-$banco = 'financeiro2';
+$senha = 'root';
+$banco = 'financeiro';
 
 ?>

@@ -510,7 +510,9 @@ require_once($pagina."/campos.php");
 
 
 
-<script type="text/javascript">var pag = "<?=$pagina?>"</script>
+<script type="text/javascript">
+	var pag = "<?= $pagina ?>"
+</script>
 <script src="../js/ajax.js"></script>
 
 
@@ -570,17 +572,17 @@ require_once($pagina."/campos.php");
     
 	}
 
-		function listarContas(id){
-	    $.ajax({
-	        url: pag + "/listar-contas.php",
-	        method: 'POST',
-	        data: {id},
-	        dataType: "html",
+	function listarContas(id){
+	$.ajax({
+		url: pag + "/listar-contas.php",
+		method: 'POST',
+		data: {id},
+		dataType: "html",
 
-	        success:function(result){
-	            $("#listar-contas").html(result);
-	        }
-	    });
+		success:function(result){
+			$("#listar-contas").html(result);
+		}
+	});
 	}
 
 

@@ -43,7 +43,13 @@ if($frequencia_automatica != 'Não'){
 		$frequencia = $res[$i]['frequencia'];
 		$query1 = $pdo->query("SELECT * from frequencias where nome = '$frequencia' ");
 		$res1 = $query1->fetchAll(PDO::FETCH_ASSOC);
-		$dias_frequencia = $res1[0]['dias'];
+		if ($query1->rowCount() > 0) {			
+			$dias_frequencia = $res1[0]['dias'];
+		} else {
+			$dias_frequencia = 0;
+		} 
+
+		
 
 		if($dias_frequencia == 30 || $dias_frequencia == 31){
 
@@ -724,7 +730,7 @@ if($frequencia_automatica != 'Não'){
 
 
 
-		function listarBusca(dataInicial, dataFinal, status, alterou_data){
+		function listarBusca(dataInicial, dataFinal, status, alterou_data){			
 			$.ajax({
 				url: pag + "/listar.php",
 				method: 'POST',

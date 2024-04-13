@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once("config.php");
 $data_atual = date('Y-m-d');
 date_default_timezone_set('America/Sao_Paulo');
@@ -6,8 +6,7 @@ date_default_timezone_set('America/Sao_Paulo');
 try {
 	$pdo = new PDO("mysql:dbname=$banco;host=$servidor;charset=utf8", "$usuario", "$senha");
 } catch (Exception $e) {
-	echo 'Não foi possível conectar ao banco de dados! <br><br>'.$e;
-
+	echo 'Não foi possível conectar ao banco de dados! <br><br>' . $e;
 }
 
 
@@ -33,9 +32,9 @@ $impressao_automatica = 'Sim';
 
 $query = $pdo->query("SELECT * FROM config");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
-if(@count($res) == 0){
+if (@count($res) == 0) {
 	$pdo->query("INSERT INTO config SET nome_sistema = '$nome_sistema', email_adm = '$email_adm', endereco_site = '$endereco_site', telefone_fixo = '$telefone_fixo', telefone_whatsapp = '$telefone_whatsapp', cnpj_site = '$cnpj_site', rodape_relatorios = '$rodape_relatorios', valor_multa = '$valor_multa', valor_juros_dia = '$valor_juros_dia', frequencia_automatica = '$frequencia_automatica', relatorio_pdf = '$relatorio_pdf', fonte_comprovante = '$fonte_comprovante', logo = 'logoqbonita', icone = 'icone.png', dias_carencia = '$dias_carencia', alerta = curDate(), impressao_automatica = '$impressao_automatica'");
-}else{
+} else {
 	$nome_sistema = $res[0]['nome_sistema'];
 	$email_adm = $res[0]['email_adm'];
 	$endereco_site = $res[0]['endereco_site'];
@@ -54,46 +53,42 @@ if(@count($res) == 0){
 	$alerta = $res[0]['alerta'];
 	$impressao_automatica = $res[0]['impressao_automatica'];
 
-	$telefone_whatsapp_link = '55'.preg_replace('/[ ()-]+/' , '' , $telefone_whatsapp);
+	$telefone_whatsapp_link = '55' . preg_replace('/[ ()-]+/', '', $telefone_whatsapp);
 }
 
-if($data_atual != $alerta){
+if ($data_atual != $alerta) {
 	//verificar se há contas a receber vencidas
 	$query = $pdo->query("SELECT * from contas_receber where vencimento < curDate() and status = 'Pendente' and cliente > 0 order by id desc ");
 	$res = $query->fetchAll(PDO::FETCH_ASSOC);
 
-	if(@count($res) > 0){
-	for($i=0; $i < @count($res); $i++){
+	if (@count($res) > 0) {
+		for ($i = 0; $i < @count($res); $i++) {
 
-		$descricao = $res[$i]['descricao'];
-		$cp2 = $res[$i]['cliente'];		
-		$cp7 = $res[$i]['vencimento'];		
-		$cp9 = $res[$i]['valor'];	
+			$descricao = $res[$i]['descricao'];
+			$cp2 = $res[$i]['cliente'];
+			$cp7 = $res[$i]['vencimento'];
+			$cp9 = $res[$i]['valor'];
 
-		$query1 = $pdo->query("SELECT * from clientes where id = '$cp2' ");
-		$res1 = $query1->fetchAll(PDO::FETCH_ASSOC);
-		if(@count($res1) > 0){
-			$nome_cliente = $res1[0]['nome'];
-			$telefone_cliente = $res1[0]['telefone'];
-			$tel_cliente = '55'.preg_replace('/[ ()-]+/' , '' , $telefone_cliente);
-			
-			$data_venc = implode('/', array_reverse(explode('-', $cp7)));
-			$valor = number_format($cp9, 2, ',', '.');
+			$query1 = $pdo->query("SELECT * from clientes where id = '$cp2' ");
+			$res1 = $query1->fetchAll(PDO::FETCH_ASSOC);
+			if (@count($res1) > 0) {
+				$nome_cliente = $res1[0]['nome'];
+				$telefone_cliente = $res1[0]['telefone'];
+				$tel_cliente = '55' . preg_replace('/[ ()-]+/', '', $telefone_cliente);
 
-			$mensagem_api = '*Você possui Débitos!!*%0A%0A';
-			$mensagem_api .= '*Olá '.$nome_cliente.', sua conta de valor '.$valor.' venceu no dia '.$data_venc.', ainda não consta como paga, caso tenha efetuado o pagamento favor desconsiderar!';
+				$data_venc = implode('/', array_reverse(explode('-', $cp7)));
+				$valor = number_format($cp9, 2, ',', '.');
 
-			$data_msg = $data_atual.' 14:00:00';
-			require('painel-adm/api_agendamento_whats.php');
+				$mensagem_api = '*Você possui Débitos!!*%0A%0A';
+				$mensagem_api .= '*Olá ' . $nome_cliente . ', sua conta de valor ' . $valor . ' venceu no dia ' . $data_venc . ', ainda não consta como paga, caso tenha efetuado o pagamento favor desconsiderar!';
 
-
-
+				$data_msg = $data_atual . ' 14:00:00';
+				require('painel-adm/api_agendamento_whats.php');
+			}
 		}
+	}
+	//var_dump($data_atual);exit;
+	$pdo->query("UPDATE config SET alerta = '$data_atual' where id = '1'");
+	
 }
-}
-
-$pdo->query("UPDATE config SET alerta = '$data_atual' where id = '1'");
-
-}
-
- ?>
+?>

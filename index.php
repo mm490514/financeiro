@@ -87,7 +87,7 @@ if (@count($res_cob) == 0) {
     <meta name="description" content="">
     <meta name="author" content="Hugo Vasconcelos">
 
-    <link href="img/logoqbonita2.png" rel="shortcut icon" type="image/x-icon">
+    <link href="img/logo-financeiro.png" rel="shortcut icon" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -110,7 +110,7 @@ if (@count($res_cob) == 0) {
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="img/logoqbonita2.png" class="img-fluid" alt="Sample image">
+                    <img src="img/logo-financeiro.png" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form method="post" action="autenticar.php">
@@ -127,7 +127,7 @@ if (@count($res_cob) == 0) {
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="submit" class="btn btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #b46b6c; color: white;">Login</button>
+                        <button type="submit" class="btn btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #3074bc; color: white;">Login</button>
 
                         </div>
 

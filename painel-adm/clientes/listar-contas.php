@@ -24,6 +24,8 @@ HTML;
 $totalVencidas = 0;
 $totalPendentes = 0;
 $total_valor = 0;
+$totalPendentesF = 0;
+$totalVencidasF = 0;
 $query = $pdo->query("SELECT * from contas_receber where cliente = '$id_cliente' order by id desc ");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 for($i=0; $i < @count($res); $i++){
@@ -118,7 +120,8 @@ for($i=0; $i < @count($res); $i++){
     	
     }
 
-    $totalVencidasF = number_format($totalVencidas, 2, ',', '.');
+    
+	$totalVencidasF = number_format($totalVencidas, 2, ',', '.');
     $totalPendentesF = number_format($totalPendentes, 2, ',', '.');
 		
 echo <<<HTML

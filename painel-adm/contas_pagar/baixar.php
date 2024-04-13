@@ -24,6 +24,8 @@ $subtotal = str_replace(',', '.', $subtotal);
 
 $saida = $_POST['saida-baixar'];
 
+
+
 $query = $pdo->query("SELECT * from $pagina where id = '$id' ");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $id = $res[0]['id'];

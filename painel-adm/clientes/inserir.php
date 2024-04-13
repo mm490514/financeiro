@@ -2,6 +2,8 @@
 require_once("../../conexao.php");
 require_once("campos.php");
 
+
+
 $cp1 = $_POST[$campo1];
 $cp2 = $_POST[$campo2];
 $cp3 = $_POST[$campo3];

@@ -18,6 +18,12 @@ $email_usuario = $res[0]['email'];
 $senha_usuario = $res[0]['senha'];
 $nivel_usuario = $res[0]['nivel'];
 
+if ($nivel_usuario != 'Administrador') {
+	$ocultar_home = 'display: block;';
+} else {
+	$ocultar_home = 'display: none;';
+}
+
 
 //MENUS DO PAINEL
 $menu1 = 'home';
@@ -298,15 +304,6 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 	</div>
 </div>
 
-
-
-
-
-
-
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="modalConfig" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
@@ -497,10 +494,6 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 	</div>
 </div>
 
-
-
-
-
 <!-- Modal Rel Mov -->
 <div class="modal fade" id="modalRelMov" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
@@ -673,11 +666,6 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 </div>
 
 
-
-
-
-
-
 <!-- Modal Rel Mov -->
 <div class="modal fade" id="modalRelLucro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
@@ -728,13 +716,6 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
-
 
 <!-- Modal Rel Mov -->
 <div class="modal fade" id="modalRelLucroPagas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -788,14 +769,8 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 </div>
 
 
-
-
-
-
 <!-- Mascaras JS -->
 <script type="text/javascript" src="../js/mascaras.js"></script>
-
-
 
 <!-- Ajax para funcionar Mascaras JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
@@ -806,16 +781,17 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 		alert("Script de manipulação de eventos de envio de formulário está sendo carregado.");
 		var cat = $('#cat-despesas-rel').val();
 		console.log(cat)
-		listarDespesasRel(cat, '');
+		
 
 		$('#cat-despesas-rel').change(function() {
-			var cat = $(this).val();
-			listarDespesasRel(cat);
-		});		
+			var cat = $(this).val();			
+		});
 
-		$("#form-perfil").submit(function(event) {
+	});
+
+
+	$("#form-perfil").submit(function() {	
 		event.preventDefault();
-		console.log("Evento de envio de formulário de perfil detectado.");
 		var formData = new FormData(this);
 
 		$.ajax({
@@ -844,14 +820,6 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 		});
 
 	});
-    });
-
-		
-	
-
-	
-
-
 
 
 
@@ -871,23 +839,7 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 
 
 
-	function listarDespesasRel(cat, despesa) {
-
-		$.ajax({
-			url: "listar-despesas.php",
-			method: 'POST',
-			data: {
-				cat,
-				despesa
-			},
-			dataType: "text",
-
-			success: function(result) {
-				$("#listar-despesas-rel").html(result);
-			}
-
-		});
-	}
+	
 </script>
 
 
