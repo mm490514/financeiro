@@ -662,7 +662,7 @@ if($frequencia_automatica != 'Não'){
 
 
 
-	<script type="text/javascript">var pag = "<?=$pagina?>"</script>
+	<script type="text/javascript">var pag = "<?=$pagina?>"</script>	
 	<script src="../js/ajax.js"></script>
 
 	<script>

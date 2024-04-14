@@ -434,15 +434,15 @@ if ($total_reg > 0) {
 
 			}
 
-			.cor1,
-			.cor2,
-			.cor3,
-			.cor4,
-			.cor5,
-			.cor6,
-			.cor7,
-			.cor8,
-			.cor9,
+			.cor01,
+			.cor02,
+			.cor03,
+			.cor04,
+			.cor05,
+			.cor06,
+			.cor07,
+			.cor08,
+			.cor09,
 			.cor10,
 			.cor11,
 			.cor12 {
@@ -450,39 +450,39 @@ if ($total_reg > 0) {
 				padding: 5px;
 			}
 
-			.cor1 {
+			.cor01 {
 				background-color: #FF0000;
 			}
 
-			.cor2 {
+			.cor02 {
 				background-color: #0000FF;
 			}
 
-			.cor3 {
+			.cor03 {
 				background-color: #FF6600;
 			}
 
-			.cor4 {
+			.cor04 {
 				background-color: #009933;
 			}
 
-			.cor5 {
+			.cor05 {
 				background-color: #FF0000;
 			}
 
-			.cor6 {
+			.cor06 {
 				background-color: #0000FF;
 			}
 
-			.cor7 {
+			.cor07 {
 				background-color: #FF6600;
 			}
 
-			.cor8 {
+			.cor08 {
 				background-color: #009933;
 			}
 
-			.cor9 {
+			.cor09 {
 				background-color: #FF0000;
 			}
 
@@ -560,7 +560,7 @@ if ($total_reg > 0) {
 				}
 
 				if ($i < 10) {
-					$texto = '0' . $i . '/' . $ano_atual;
+					$texto = $i . '/' . $ano_atual;
 				} else {
 					$texto = $i . '/' . $ano_atual;
 				}

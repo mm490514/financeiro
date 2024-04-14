@@ -1,5 +1,4 @@
 <?php 
-var_dump($_POST);
 require_once("../conexao.php");
 $nome = $_POST['nome-usuario'];
 $email = $_POST['email-usuario'];

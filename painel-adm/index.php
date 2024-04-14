@@ -802,8 +802,7 @@ $data_final_mes_ant = date('Y-m-d', strtotime("-1 month", strtotime($data_final_
 
 <!-- Ajax para inserir ou editar dados -->
 <script type="text/javascript">
-	$(document).ready(function() {
-		alert("Script de manipulação de eventos de envio de formulário está sendo carregado.");
+	$(document).ready(function() {		
 		var cat = $('#cat-despesas-rel').val();
 		console.log(cat)
 		listarDespesasRel(cat, '');

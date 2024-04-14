@@ -1,6 +1,7 @@
 <?php 
 
 require_once('../config.php');
+require_once("../conexao.php");
 
 $id_cliente = @$_POST['id-cli'];
 $status = @$_POST['status'];
@@ -10,6 +11,13 @@ $data_final = @$_POST['dataFinal'];
 
 //ALIMENTAR OS DADOS NO RELATÓRIO
 $html = file_get_contents($url_sistema."relatorios/contasCliente.php?status=$status&data_inicial=$data_inicial&data_final=$data_final&id=$id_cliente");
+
+$query = $pdo->query("SELECT * FROM config");
+$res = $query->fetchAll(PDO::FETCH_ASSOC);
+
+if (@count($res) > 0) {
+	$relatorio_pdf = $res[0]['relatorio_pdf'];
+}
 
 if($relatorio_pdf != 'Sim'){
 	echo $html;

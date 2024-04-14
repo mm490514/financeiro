@@ -397,19 +397,17 @@ require_once($pagina."/campos.php");
 
 
 <script type="text/javascript">
-		$(document).ready(function() {
-			$('.sel2').select2({    	 
-    	 dropdownParent: $('#modalForm')
-    	});
+	$(document).ready(function() {
+	$('.sel2').select2({    	 
+		dropdownParent: $('#modalForm')
+	});
 
-			$('.sel3').select2({    	 
-    	 dropdownParent: $('#modalComprar')
-    	});
+	$('.sel3').select2({    	 
+		dropdownParent: $('#modalComprar')
+	});
 
-		});
-
-	
-	</script>
+	});	
+</script>
 
 	<style type="text/css">
 		.select2-selection__rendered {
